@@ -2,11 +2,11 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import Route from './Route';
 
-import SignIn from '../pages/SignIn';
-import SignUp from '../pages/SignUp';
+import SignIn from '~/pages/SignIn';
+import SignUp from '~/pages/SignUp';
 
-import Dashboard from '../pages/Dashboard';
-import Profile from '../pages/Profile';
+import Dashboard from '~/pages/Dashboard';
+import Profile from '~/pages/Profile';
 
 export default function Routes() {
   return (
@@ -14,8 +14,8 @@ export default function Routes() {
       <Route path="/" exact component={SignIn} />
       <Route path="/register" exact component={SignUp} />
 
-      <Route path="/dashboard" exact component={Dashboard} />
-      <Route path="/profile" exact component={Profile} />
+      <Route path="/dashboard" exact component={Dashboard} isPrivate />
+      <Route path="/profile" exact component={Profile} isPrivate />
     </Switch>
   );
 }
